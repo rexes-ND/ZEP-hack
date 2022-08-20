@@ -1,5 +1,20 @@
 let erkhes_obj = App.loadSpritesheet('res/Object_0106.png')
 
+class Item {
+    constructor(name, price, description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+}
+
+class User {
+    constructor(name, items){
+        this.name = name;
+        this.items = items;
+    }
+}
+
 App.addOnKeyDown(81, function (player) {
     Map.putObject(0, 0, erkhes_obj, {overlap: true});
     Map.putObject(10, 10, erkhes_obj, {overlap: true});
