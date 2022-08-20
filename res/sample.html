@@ -45,7 +45,7 @@
           required
         ></textarea>
       </div>
-      <input type="submit" value="Send" class="submit-btn" />
+      <input type="submit" value="Send" class="submit-btn" onclick="myFunction()"/>
     </fieldset>
 </form>
 
@@ -62,13 +62,20 @@
 				);
 			}
       function myFunction() {
-          window.parent.postMessage(
-              {
-                  type: "submit",
-                  name: submissionSellForm.name.value
-              }, 
-              
-              "*"
-          );
-      }
+        submissionObj = {
+          itemName: submissionSellForm.name.value,
+          zipId: submissionSellForm.email.value,
+          price: submissionSellForm.price.value,
+          image: submissionSellForm.myFile.value,
+          description: submissionSellForm.message.value
+        }
+        window.parent.postMessage(
+            {
+                type: "submit",
+                submissionObj
+            }, 
+            
+            "*"
+        );
+    }
 </script>

@@ -36,7 +36,8 @@ App.onJoinPlayer.Add(function (player) {
 			player.tag.widget = null;
 		}
         else if (msg.type == "submit") {
-            player.showCenterLabel(`Entered name: ${msg.name}`);
+            player.showCenterLabel(`Entered obj: ${msg.submissionObj}`);
+            // msg.submissionObj
             player.tag.widget.destroy();
             player.tag.widget = null
         }
