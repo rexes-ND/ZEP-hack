@@ -20,7 +20,7 @@ App.onJoinPlayer.Add(function (player) {
 			player.tag.widget.destroy();
 			player.tag.widget = null;
 		}
-        if (msg.type == "submit") {
+        else if (msg.type == "submit") {
             player.showCenterLabel(`Entered name: ${msg.name}`);
             player.tab.widget.destory();
             player.tag.widget = null
