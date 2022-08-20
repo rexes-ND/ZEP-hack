@@ -1,0 +1,54 @@
+<form onsubmit="myFunction()" id="erkhes_form">
+    <fieldset>
+      <legend>Contact me</legend>
+      <div class="form-control">
+        <label for="name">Name</label>
+        <input type="name" id="name" placeholder="Enter your name" required />
+      </div>
+
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+
+      <div class="form-control">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          cols="30"
+          rows="10"
+          placeholder="Enter your message"
+          required
+        ></textarea>
+      </div>
+      <input type="submit" value="Send" class="submit-btn" onclick="myFunction()"/>
+    </fieldset>
+</form>
+
+<!-- <i onclick="closeWidget()" class="fa-solid fa-xmark"></i> -->
+<script type="text/javascript">
+			// Calls the function when x button is pressed
+			function closeWidget() {
+				// Sends message to App 
+				window.parent.postMessage(
+					{
+						type: "close",
+					},
+					"*"
+				);
+			}
+            function myFunction() {
+                window.parent.postMessage(
+                    {
+                        type: "submit",
+                        name: erkhes_form.name.value
+                    }, 
+                    "*"
+                );
+            }
+</script>
