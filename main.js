@@ -88,3 +88,18 @@ App.onJoinPlayer.Add(function (player) {
         }
 	});
 });
+
+
+let testObject = App.loadSpritesheet("object.png");
+
+App.onStart.Add(function () {
+	Map.putObject(5, 5, testObject, { overlap: true });
+});
+
+// Calls event when the player collides with an object
+App.onObjectTouched.Add(function (sender, x, y, tileID) {
+	Map.putObject(x, y, null);
+	App.showCenterLabel(
+		`${sender.name} has collided with an object at the coordinates : (${x}, ${y}).`
+	);
+});
