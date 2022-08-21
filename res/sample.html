@@ -11,7 +11,7 @@
         <input type="name" id="name" placeholder="Enter your Item For sell" required />
       </div>
 
-      <div class="form-control">
+      <!-- <div class="form-control">
         <label for="zipCode">Zip ID</label>
         <input
           
@@ -19,7 +19,7 @@
           placeholder="Your Zip ID"
           required
         />
-      </div>
+      </div> -->
       <div class="form-control">
         <label for="Price">Price</label>
         <input
@@ -29,11 +29,11 @@
           required
         />
       </div>
-      <div>
+      <!-- <div>
         <label for = "image">Image</label>
         <input type="file" id="myFile" name="filename">
         
-      </div>
+      </div> -->
 
       <div class="form-control">
         <label for="Description">Description</label>
@@ -64,15 +64,13 @@
       function myFunction() {
         submissionObj = {
           itemName: submissionSellForm.name.value,
-          zipId: submissionSellForm.email.value,
-          price: submissionSellForm.price.value,
-          image: submissionSellForm.myFile.value,
+          itemPrice: submissionSellForm.price.value,
           description: submissionSellForm.message.value
         }
         window.parent.postMessage(
             {
                 type: "submit",
-                submissionObj
+                submissionObj: submissionObj
             }, 
             
             "*"
