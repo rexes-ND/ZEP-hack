@@ -71,7 +71,7 @@ App.onJoinPlayer.Add(function (player) {
             
             App.httpGet(`https://morning-everglades-39102.herokuapp.com/?post=true&userId=${userId}&itemName=${itemName}&itemPrice=${itemPrice}&description=${description}&itemId=${itemId}`, null, function(res) {
                 let response =  JSON.parse(res);
-                player.showCenterLabel(`Entered obj: ${response['itemId']}`)
+                player.showCenterLabel(`Successfully created store number 7`)
             })
             // App.httpPost('https://morning-everglades-39102.herokuapp.com/', null, msg.submissionObj, (res) => {
             //     let response = JSON.parse(res);
